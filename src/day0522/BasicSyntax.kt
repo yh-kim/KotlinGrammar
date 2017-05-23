@@ -6,6 +6,7 @@ package day0522
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
+// object는 싱글톤으로 사용
 object BaseGrammar {
     val a = 1           // val : 변할 수 없는 상수(final), Int를 추론
     var b: Int = 2      // var : 변수, 자료형을 뒤에 씀
