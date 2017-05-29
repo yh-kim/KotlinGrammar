@@ -80,7 +80,7 @@ class Idioms {
     }
 
     fun testClass() {
-        var product = grammar.day0523.Product.Companion.create()    // Product.create()
+        var product = Product.Companion.create()    // Product.create()
         print(product.name)
     }
 }
@@ -95,6 +95,6 @@ class Product constructor(var name: String) {
 
     // Companion objects -> 싱글톤 객체, Object 이름을 넣지 않으면 .Companion으로 사용 가능
     companion object {
-        fun create() = grammar.day0523.Product()
+        fun create() = Product()
     }
 }
