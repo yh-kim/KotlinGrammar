@@ -23,6 +23,8 @@ fun main(args: Array<String>) {
             .split(' ')
             .map { it.trim().toInt() }
 
+    br.close()
+
     for(i in 0..count - 1) {
         for(j in 0..i-1) {
             if(valueList[i] > valueList[j]) {
