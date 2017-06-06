@@ -1,5 +1,9 @@
 package dp.iterator
 
+import dp.iterator.menu.CafeMenu
+import dp.iterator.menu.DinerMenu
+import dp.iterator.menu.PancakeHouseMenu
+
 /**
  * Created by yonghoon on 2017-06-06
  * Blog   : http://blog.pickth.com
@@ -9,7 +13,8 @@ package dp.iterator
 fun main(args: Array<String>) {
     val dinerMenu = DinerMenu()
     val pancakeMenu = PancakeHouseMenu()
+    val cafeMenu = CafeMenu()
 
-    val waitress = Waitress(pancakeMenu, dinerMenu)
+    val waitress = Waitress(pancakeMenu, dinerMenu, cafeMenu)
     waitress.printMenu()
 }

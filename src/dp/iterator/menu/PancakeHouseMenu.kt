@@ -1,6 +1,4 @@
-package dp.iterator
-
-import kotlin.collections.Iterator
+package dp.iterator.menu
 
 /**
  * Created by yonghoon on 2017-06-06

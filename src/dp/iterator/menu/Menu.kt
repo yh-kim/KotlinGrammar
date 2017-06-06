@@ -1,4 +1,4 @@
-package dp.iterator
+package dp.iterator.menu
 
 /**
  * Created by yonghoon on 2017-06-06
@@ -6,4 +6,6 @@ package dp.iterator
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-data class MenuItem(var name:String, var description: String, var vegetarian: Boolean, var price: Double)
+interface Menu {
+    fun createIterator(): Iterator<MenuItem?>
+}

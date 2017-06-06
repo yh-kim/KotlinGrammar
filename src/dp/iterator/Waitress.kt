@@ -1,5 +1,7 @@
 package dp.iterator
 
+import dp.iterator.menu.Menu
+import dp.iterator.menu.MenuItem
 import kotlin.collections.Iterator
 
 /**
@@ -8,7 +10,7 @@ import kotlin.collections.Iterator
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-class Waitress(val pancakeHouseMenu: Menu, val dinerMenu: Menu) {
+class Waitress(val pancakeHouseMenu: Menu, val dinerMenu: Menu, val cafeMenu: Menu) {
 
     fun printMenu() {
         val pancakeIterator = pancakeHouseMenu.createIterator()
@@ -16,8 +18,12 @@ class Waitress(val pancakeHouseMenu: Menu, val dinerMenu: Menu) {
         printMenu(pancakeIterator)
 
         val dinerIterator = dinerMenu.createIterator()
-        println("\n저녁메뉴")
+        println("\n점심메뉴")
         printMenu(dinerIterator)
+
+        val cafeIterator = cafeMenu.createIterator()
+        println("\n저녁메뉴")
+        printMenu(cafeIterator)
     }
 
     private fun printMenu(iterator: Iterator<MenuItem?>) {
