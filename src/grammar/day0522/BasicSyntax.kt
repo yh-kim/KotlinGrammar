@@ -65,27 +65,27 @@ object BaseGrammar {
         println()
 
         // for each
-        for(number in grammar.day0522.BaseGrammar.immutableList)
+        for(number in immutableList)
             print("$number ")
         println()
-        for(position in grammar.day0522.BaseGrammar.immutableList.indices)
-            print("${grammar.day0522.BaseGrammar.immutableList[position]} ")
+        for(position in immutableList.indices)
+            print("${immutableList[position]} ")
         println()
 
-        print(grammar.day0522.BaseGrammar.immutableList.joinToString("-"))  // 리스트 사이에 문자열 낄 수도 있음
+        print(immutableList.joinToString("-"))  // 리스트 사이에 문자열 낄 수도 있음
     }
 
     fun testCollection():Unit {
-        grammar.day0522.BaseGrammar.mutableList.add(60)
+        mutableList.add(60)
 
-        grammar.day0522.BaseGrammar.mutableList
+        mutableList
                 .filter { number -> number > 20 }
                 .map { number -> number * 2 }
                 .forEach { number -> print("$number ") }
 
         println()
 
-        grammar.day0522.BaseGrammar.mutableList
+        mutableList
                 .filter { it > 20 }
                 .map { it * 2 }
                 .forEach { print("$it ") }
@@ -93,7 +93,7 @@ object BaseGrammar {
 
     // main 함수
     @JvmStatic fun main(args: Array<String>) {
-        grammar.day0522.BaseGrammar.iteratePrint(10)
+        BaseGrammar.iteratePrint(10)
     }
 
 
