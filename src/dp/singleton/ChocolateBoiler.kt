@@ -16,8 +16,8 @@ class ChocolateBoiler {
     }
 
     companion object {
-        // Kotlin use annotation because there is no volatile keword.
-        // The volatile keyword allows variables to initialized correctly even if multithreeading is used.
+        // Kotlin use annotation because there is no volatile keyword.
+        // The volatile keyword allows variables to initialize correctly even if multithreading is used.
         @Volatile lateinit private var uniqueInstance: ChocolateBoiler
 
         fun getInstance(): ChocolateBoiler {
