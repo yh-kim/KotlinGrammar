@@ -12,7 +12,8 @@ import java.io.InputStreamReader
 fun main(args: Array<String>) {
     val br = BufferedReader(InputStreamReader(System.`in`))
 //    val stack = BaseStack<String>()
-    val stack = ArrayStack<String>(20)
+//    val stack = ArrayStack<String>(20)
+    val stack = ListStack<String>()
 
     val count = br.readLine().trim().toInt()
 
