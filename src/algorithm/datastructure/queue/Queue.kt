@@ -1,34 +1,20 @@
 package algorithm.datastructure.queue
 
 /**
- * Created by yonghoon on 2017-05-26
+ * Created by yonghoon on 2017-06-21
  * Blog   : http://blog.pickth.com
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-class Queue<T> {
-    val dataList: ArrayList<T> = ArrayList()
+interface Queue<T> {
+    fun insert(t: T): T
 
-    fun push(t: T): T {
-        dataList.add(t)
-        return t
-    }
+    fun remove(): T?
 
-    fun pop(): T? {
-        if(size() == 0)
-            return null
+    fun peek(): T?
 
-        val getData = front()
-        dataList.removeAt(0)
+    fun size(): Int
 
-        return getData
-    }
+    fun empty(): Boolean
 
-    fun size() = dataList.size
-
-    fun empty() = if(size() == 0) 1 else 0
-
-    fun front() = dataList.firstOrNull()
-
-    fun back() = dataList.lastOrNull()
 }
