@@ -7,16 +7,17 @@ package algorithm.datastructure.queue
  * Mail   : yonghoon.kim@pickth.com
  */
 class BaseQueue<T>: Queue<T> {
+
     val dataList: ArrayList<T> = ArrayList()
 
-    override fun insert(t: T): T {
+    override fun enqueue(t: T): T {
         dataList.add(t)
         return t
     }
 
     override fun peek() = dataList.firstOrNull()
 
-    override fun remove(): T? {
+    override fun dequeue(): T? {
         if(size() == 0)
             return null
 
@@ -25,6 +26,8 @@ class BaseQueue<T>: Queue<T> {
 
         return getData
     }
+
+    override fun isFull() = false
 
     override fun size() = dataList.size
 

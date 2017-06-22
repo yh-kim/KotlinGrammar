@@ -6,12 +6,12 @@ package algorithm.datastructure.queue
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-class ArrayQueue<T>(val size: Int): Queue<T> {
-    val dataArray = Array<Any?>(size, {null}) as Array<T>
+class ArrayQueue<T>(val maxSize: Int): Queue<T> {
+    val dataArray = Array<Any?>(maxSize, {null}) as Array<T>
     var rear = -1
-    var front = 0
+    var front = -1
 
-    override fun insert(t: T): T {
+    override fun enqueue(t: T): T {
         dataArray[++rear] = t
         return t
     }
@@ -21,10 +21,10 @@ class ArrayQueue<T>(val size: Int): Queue<T> {
             return null
         }
 
-        return dataArray[front]
+        return dataArray[front + 1]
     }
 
-    override fun remove(): T? {
+    override fun dequeue(): T? {
         val data = peek()
         if(data != null) {
             front++
@@ -33,9 +33,11 @@ class ArrayQueue<T>(val size: Int): Queue<T> {
         return data
     }
 
-    override fun size() = rear - front + 1
+    override fun isFull() = (rear == maxSize - 1)
 
-    override fun empty() = (front == rear + 1)
+    override fun size() = rear - front
+
+    override fun empty() = (front == rear)
 
     fun back(): T? {
         if(empty()) {

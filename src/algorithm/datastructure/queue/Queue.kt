@@ -7,11 +7,13 @@ package algorithm.datastructure.queue
  * Mail   : yonghoon.kim@pickth.com
  */
 interface Queue<T> {
-    fun insert(t: T): T
-
-    fun remove(): T?
+    fun enqueue(t: T): T
 
     fun peek(): T?
+
+    fun dequeue(): T?
+
+    fun isFull(): Boolean
 
     fun size(): Int
 

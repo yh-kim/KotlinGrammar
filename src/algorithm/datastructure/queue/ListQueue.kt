@@ -7,11 +7,12 @@ package algorithm.datastructure.queue
  * Mail   : yonghoon.kim@pickth.com
  */
 class ListQueue<T>: Queue<T> {
+
     var front: Node? = null
     var rear: Node? = null
     var count = 0
 
-    override fun insert(t: T): T {
+    override fun enqueue(t: T): T {
         val data = Node(t as Any, null)
 
         if(empty()) {
@@ -35,7 +36,7 @@ class ListQueue<T>: Queue<T> {
         return front!!.data as T
     }
 
-    override fun remove(): T? {
+    override fun dequeue(): T? {
         val data = peek() ?: return null
 
         front = front!!.nextNode
@@ -47,6 +48,9 @@ class ListQueue<T>: Queue<T> {
 
         return data
     }
+
+
+    override fun isFull() = false
 
     override fun size() = count
 

@@ -11,9 +11,9 @@ import java.io.InputStreamReader
  */
 fun main(args: Array<String>) {
     val br = BufferedReader(InputStreamReader(System.`in`))
-//    var queue = BaseQueue<String>()
+    var queue = BaseQueue<String>()
 //    var queue = ArrayQueue<String>(20)
-    var queue = ListQueue<String>()
+//    var queue = ListQueue<String>()
 
     val count = br.readLine().trim().toInt()
 
@@ -21,9 +21,9 @@ fun main(args: Array<String>) {
         val line = br.readLine().split(" ")
 
         when (line[0]) {
-            "push" -> queue.insert(line[1])
-            "pop" -> println(queue.remove() ?: -1)
-            "size" -> println(queue.size())
+            "push" -> queue.enqueue(line[1])
+            "pop" -> println(queue.dequeue() ?: -1)
+            "maxSize" -> println(queue.size())
             "empty" -> println(queue.empty())
             "front" -> println(queue.peek() ?: -1)
             "back" -> println(queue.back() ?: -1)

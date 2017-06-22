@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
         when (line[0]) {
             "push" -> stack.push(line[1])
             "pop" -> println(stack.pop() ?: -1)
-            "size" -> println(stack.size())
+            "maxSize" -> println(stack.size())
             "empty" -> println(stack.empty())
             "peek" -> println(stack.peek() ?: -1)
             else -> Unit
