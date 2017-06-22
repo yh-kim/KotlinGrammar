@@ -12,7 +12,8 @@ import java.io.InputStreamReader
 fun main(args: Array<String>) {
     val br = BufferedReader(InputStreamReader(System.`in`))
 //    var queue = BaseQueue<String>()
-    var queue = ArrayQueue<String>(20)
+//    var queue = ArrayQueue<String>(20)
+    var queue = ListQueue<String>()
 
     val count = br.readLine().trim().toInt()
 
