@@ -8,7 +8,7 @@ package algorithm.datastructure.queue
  */
 class BaseQueue<T>: Queue<T> {
 
-    val dataList: ArrayList<T> = ArrayList()
+    private val dataList: ArrayList<T> = ArrayList()
 
     override fun enqueue(t: T): T {
         dataList.add(t)

@@ -8,9 +8,9 @@ package algorithm.datastructure.queue
  */
 class CircularQueue<T>(val maxSize: Int): Queue<T> {
 
-    val dataArray = Array<Any?>(maxSize, {null}) as Array<T>
-    var rear = 0
-    var front = 0
+    private val dataArray = Array<Any?>(maxSize, {null}) as Array<T>
+    private var rear = 0
+    private var front = 0
 
     override fun enqueue(t: T): T {
         if(isFull()) {

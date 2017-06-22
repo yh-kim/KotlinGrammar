@@ -8,9 +8,9 @@ package algorithm.datastructure.queue
  */
 class ListQueue<T>: Queue<T> {
 
-    var front: Node? = null
-    var rear: Node? = null
-    var count = 0
+    private var front: Node? = null
+    private var rear: Node? = null
+    private var count = 0
 
     override fun enqueue(t: T): T {
         val data = Node(t as Any, null)

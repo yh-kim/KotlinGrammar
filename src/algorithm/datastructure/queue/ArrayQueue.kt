@@ -7,9 +7,9 @@ package algorithm.datastructure.queue
  * Mail   : yonghoon.kim@pickth.com
  */
 class ArrayQueue<T>(val maxSize: Int): Queue<T> {
-    val dataArray = Array<Any?>(maxSize, {null}) as Array<T>
-    var rear = -1
-    var front = -1
+    private val dataArray = Array<Any?>(maxSize, {null}) as Array<T>
+    private var rear = -1
+    private var front = -1
 
     override fun enqueue(t: T): T {
         dataArray[++rear] = t
