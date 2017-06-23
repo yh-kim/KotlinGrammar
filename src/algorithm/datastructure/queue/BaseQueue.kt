@@ -31,7 +31,7 @@ class BaseQueue<T>: Queue<T> {
 
     override fun size() = dataList.size
 
-    override fun empty() = (size() == 0)
+    override fun isEmpty() = (size() == 0)
 
     fun back() = dataList.lastOrNull()
 }

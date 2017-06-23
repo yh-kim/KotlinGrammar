@@ -17,6 +17,6 @@ interface Queue<T> {
 
     fun size(): Int
 
-    fun empty(): Boolean
+    fun isEmpty(): Boolean
 
 }

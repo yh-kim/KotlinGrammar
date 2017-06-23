@@ -26,8 +26,8 @@ class CircularQueue<T>(val maxSize: Int): Queue<T> {
 
 
     override fun peek(): T? {
-        if(empty()) {
-            throw ArrayIndexOutOfBoundsException("is empty")
+        if(isEmpty()) {
+            throw ArrayIndexOutOfBoundsException("is isEmpty")
         }
 
         return dataArray[front+1]
@@ -44,7 +44,7 @@ class CircularQueue<T>(val maxSize: Int): Queue<T> {
 
     override fun size() = (rear - front + 1)
 
-    override fun empty() = (front == rear)
+    override fun isEmpty() = (front == rear)
 
     fun show() {
         val ste = Thread.currentThread().stackTrace[2]

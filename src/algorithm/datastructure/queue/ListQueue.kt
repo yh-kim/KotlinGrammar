@@ -15,7 +15,7 @@ class ListQueue<T>: Queue<T> {
     override fun enqueue(t: T): T {
         val data = Node(t as Any, null)
 
-        if(empty()) {
+        if(isEmpty()) {
             rear = data
             front = data
         } else {
@@ -28,7 +28,7 @@ class ListQueue<T>: Queue<T> {
     }
 
     override fun peek(): T? {
-        if(empty()) {
+        if(isEmpty()) {
 //            throw ArrayIndexOutOfBoundsException()
             return null
         }
@@ -54,10 +54,10 @@ class ListQueue<T>: Queue<T> {
 
     override fun size() = count
 
-    override fun empty() = (front == null)
+    override fun isEmpty() = (front == null)
 
     fun back(): T? {
-        if(empty()){
+        if(isEmpty()){
             return null
         }
 

@@ -17,7 +17,7 @@ class ArrayQueue<T>(val maxSize: Int): Queue<T> {
     }
 
     override fun peek(): T? {
-        if(empty()) {
+        if(isEmpty()) {
             return null
         }
 
@@ -37,10 +37,10 @@ class ArrayQueue<T>(val maxSize: Int): Queue<T> {
 
     override fun size() = rear - front
 
-    override fun empty() = (front == rear)
+    override fun isEmpty() = (front == rear)
 
     fun back(): T? {
-        if(empty()) {
+        if(isEmpty()) {
             return null
         }
         return dataArray[rear]

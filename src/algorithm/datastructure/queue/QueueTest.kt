@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
             "push" -> queue.enqueue(line[1])
             "pop" -> println(queue.dequeue() ?: -1)
             "maxSize" -> println(queue.size())
-            "empty" -> println(queue.empty())
+            "empty" -> println(queue.isEmpty())
             "front" -> println(queue.peek() ?: -1)
             "back" -> println(queue.back() ?: -1)
             else -> Unit
