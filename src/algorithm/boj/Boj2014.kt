@@ -20,44 +20,39 @@ fun main(args: Array<String>) {
 
     var values = Array(count, {0})
     st = StringTokenizer(br.readLine(), " ")
-    for(i in 0..count-1) {
+
+    val nums = Array<ListQueue<Long>?>(values.size, { null })
+
+    for(i in 0..nums.size-1) {
         values[i] = st.nextToken().toInt()
+        nums[i] = ListQueue<Long>()
+        nums[i]!!.enqueue(values[i].toLong())
     }
 
     br.close()
 
-
-    val nums = Array<ListQueue<Int>?>(values.size, { null })
-
-    for(i in 0..nums.size-1) {
-        nums[i] = ListQueue<Int>()
-        nums[i]!!.enqueue(values[i])
-    }
-
-    var result = 0
+    var result: Long = 0
 
     for(i in 0..size-1) {
-        var minValue = Int.MAX_VALUE
-        var index = Int.MAX_VALUE
+        result = Long.MAX_VALUE
+        var index = 0
 
         for(j in 0..nums.size-1) {
-            if(minValue > nums[j]!!.peek()) {
-                minValue = nums[j]!!.peek()
+            if(result > nums[j]!!.peek()) {
+                result = nums[j]!!.peek()
                 index = j
             }
         }
 
         for(j in 0..nums.size-1) {
             if(values[j] >= values[index]) {
-                nums[j]!!.enqueue(values[j] * minValue)
+                nums[j]!!.enqueue(values[j] * result)
             }
-
 
         }
 
         nums[index]!!.dequeue()
-        result = minValue
-//        println("$i 번째 값은 $result 입니다")
+        println("$i 번째 값은 $result 입니다")
     }
 
     print(result)
