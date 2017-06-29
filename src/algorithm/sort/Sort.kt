@@ -7,15 +7,17 @@ package algorithm.sort
  * Mail   : yonghoon.kim@pickth.com
  */
 abstract class Sort {
+    open var complexity = ""
+
     abstract fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T>
 
-    private fun <T> show(arr: Array<T>) {
+    protected fun <T> show(arr: Array<T>) {
         val cls = Thread.currentThread()
                 .stackTrace[2]
                 .className
                 .split(".")[2]
 
-        print("$cls - [")
+        print("${cls}($complexity) -  [")
         for(i in arr) {
             print("$i, ")
         }

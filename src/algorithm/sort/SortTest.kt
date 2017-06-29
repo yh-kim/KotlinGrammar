@@ -9,5 +9,12 @@ package algorithm.sort
 fun main(args: Array<String>) {
     var arr = arrayOf(4, 2, 3, 1, 5)
 
+    print("Initial array - [" )
+    for(i in arr) {
+        print("$i, ")
+    }
+    print("]\n\n")
+
     SelectSort().sort(arr, {a, b -> a > b})
+    BubbleSort().sort(arr, {a, b -> a > b})
 }
