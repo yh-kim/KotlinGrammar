@@ -9,9 +9,7 @@ package algorithm.sort
  * Time complexity - O(n^2)
  */
 class BubbleSort: Sort() {
-    override var complexity: String
-        get() = "n^2"
-        set(value) {}
+    override val complexity = "n^2"
 
     override fun <T> sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
         var value: T

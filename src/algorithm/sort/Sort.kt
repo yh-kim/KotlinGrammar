@@ -7,7 +7,7 @@ package algorithm.sort
  * Mail   : yonghoon.kim@pickth.com
  */
 abstract class Sort {
-    open var complexity = ""
+    abstract val complexity: String
 
     abstract fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T>
 
