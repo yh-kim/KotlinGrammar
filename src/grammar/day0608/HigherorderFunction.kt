@@ -36,6 +36,7 @@ class HigherorderFunction {
     fun mapTest() {
         val list = listOf(10, 20, 30)
 
+//        val doubled = list.map({ value -> value * 2 })
 //        val doubled = list.map { value -> value * 2 }
         val doubled = list.map { it * 2 }
 
@@ -74,5 +75,5 @@ class HigherorderFunction {
 }
 
 fun main(args: Array<String>) {
-    HigherorderFunction().sumTest()
+    HigherorderFunction().mapTest()
 }

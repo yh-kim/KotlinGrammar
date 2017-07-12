@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     }
     print("]\n\n")
 
-    SelectSort().sort(arr.clone(), {a, b -> a > b})
+    SelectionSort().sort(arr.clone(), { a, b -> a > b})
     BubbleSort().sort(arr.clone(), {a, b -> a > b})
-    InsertSort().sort(arr.clone(), {a, b -> a > b})
+    InsertionSort().sort(arr.clone(), { a, b -> a > b})
 }

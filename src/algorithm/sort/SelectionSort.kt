@@ -8,7 +8,7 @@ package algorithm.sort
  *
  * Time complexity - O(n^2)
  */
-class SelectSort: Sort() {
+class SelectionSort : Sort() {
     override val complexity = "n^2"
 
     override fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T> {
