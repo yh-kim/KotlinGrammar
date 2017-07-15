@@ -38,10 +38,10 @@ fun main(args: Array<String>) {
     }
 
     val br = BufferedReader(InputStreamReader(System.`in`))
-    val T = br.readLine().toInt()
+    val T = br.readLine().trim().toInt()
     for(i in 0..T - 1) {
         var num = 1
-        val F = br.readLine().toInt()
+        val F = br.readLine().trim().toInt()
         val index = HashMap<String, Int>()
 
         for (j in 1..2*F) {

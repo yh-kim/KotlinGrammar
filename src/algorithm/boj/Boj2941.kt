@@ -22,7 +22,6 @@ fun main(args: Array<String>) {
     var preChar = ' '
     var result = 0
     for(i in input.length-1 downTo 0) {
-
         if(input[i] == '=' || input[i] == '-' || input[i] == 'j') {
             preChar = input[i]
             check = true
