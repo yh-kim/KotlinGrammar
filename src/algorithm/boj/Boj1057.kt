@@ -36,8 +36,7 @@ fun main(args: Array<String>) {
     var user2 = inputs[2] - 1
 
     var result = 1
-    while (true) {
-        if (user1/2 == user2/2) break
+    while (user1/2 != user2/2) {
         user1 /= 2
         user2 /= 2
         result++
