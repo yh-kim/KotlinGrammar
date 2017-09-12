@@ -12,16 +12,20 @@ class SelectionSort : Sort() {
     override val complexity = "n^2"
 
     override fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T> {
-        var value: T
-
         for(i in 0..arr.size - 2) {
-            for(j in i+1..arr.size - 1) {
-                if(compare(arr[i], arr[j])) {
-                    value = arr[i]
-                    arr[i] = arr[j]
-                    arr[j] = value
+            var min = i
+            for(j in i+1 until arr.size) {
+                if(compare(arr[min], arr[j])) {
+                    min = j
                 }
             }
+
+            if(i != min) {
+                var temp = arr[i]
+                arr[i] = arr[min]
+                arr[min] = temp
+            }
+
         }
 
         show(arr)
