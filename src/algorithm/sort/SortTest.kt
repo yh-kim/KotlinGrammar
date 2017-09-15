@@ -9,6 +9,7 @@ package algorithm.sort
 fun main(args: Array<String>) {
 //    var arr = arrayOf(4, 2, 3, 1, 5)
     var arr = arrayOf(5,39,2,44,33)
+//    var arr = arrayOf(30000,1,3,10,3,5)
 
     print("Initial array - [" )
     for(i in arr) {
