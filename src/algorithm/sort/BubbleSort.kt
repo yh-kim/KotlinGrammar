@@ -8,10 +8,10 @@ package algorithm.sort
  *
  * Time complexity - O(n^2)
  */
-class BubbleSort: Sort() {
+class BubbleSort<T>: Sort<T>() {
     override val complexity = "n^2"
 
-    override fun <T> sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
+    override fun sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
         var value: T
 
         for(i in 0..arr.size - 2) {

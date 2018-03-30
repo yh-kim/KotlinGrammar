@@ -8,10 +8,10 @@ package algorithm.sort
  *
  * Time complexity - O(n^2)
  */
-class SelectionSort : Sort() {
+class SelectionSort<T> : Sort<T>() {
     override val complexity = "n^2"
 
-    override fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T> {
+    override fun sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T> {
         for(i in 0..arr.size - 2) {
             var min = i
             for(j in i+1 until arr.size) {

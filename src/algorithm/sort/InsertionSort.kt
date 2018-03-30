@@ -8,10 +8,10 @@ package algorithm.sort
  *
  * Time complexity - O(n^2)
  */
-class InsertionSort : Sort() {
+class InsertionSort<T> : Sort<T>() {
     override val complexity = "n^2"
 
-    override fun <T> sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
+    override fun sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
         for(i in 1 until arr.size) {
             var value = arr[i]
             var index = 0

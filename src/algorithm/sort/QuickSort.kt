@@ -19,18 +19,19 @@ package algorithm.sort
 /**
  * Created by yonghoon on 2017-09-12
  * Blog   : http://blog.pickth.com
+ *
+ * Time complexity - O(nlogn)
  */
-
-class QuickSort : Sort() {
+class QuickSort<T> : Sort<T>() {
     override val complexity: String = "nlogn"
 
-    override fun <T> sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
+    override fun sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
         partition(arr, 0, arr.size-1, compare)
         show(arr)
         return arr
     }
 
-    fun <T> partition(arr: Array<T>, left: Int, right: Int, compare: (T, T) -> Boolean) {
+    private fun partition(arr: Array<T>, left: Int, right: Int, compare: (T, T) -> Boolean) {
         var leftIndex = left
         var rightIndex = right
         val pivotIndex = (left + right) / 2

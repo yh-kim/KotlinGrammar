@@ -6,18 +6,18 @@ package algorithm.sort
  * Github : https://github.com/yh-kim
  * Mail   : yonghoon.kim@pickth.com
  */
-abstract class Sort {
+abstract class Sort<T> {
     abstract val complexity: String
 
-    abstract fun <T> sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T>
+    abstract fun sort(arr:Array<T>,compare: (T,T) -> Boolean): Array<T>
 
-    protected fun <T> show(arr: Array<T>) {
+    protected fun show(arr: Array<T>) {
         val cls = Thread.currentThread()
                 .stackTrace[2]
                 .className
                 .split(".")[2]
 
-        print("${cls}($complexity) -  [")
+        print("${cls}($complexity) \t-  [")
         for(i in arr) {
             print("$i, ")
         }
