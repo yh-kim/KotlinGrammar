@@ -24,32 +24,34 @@ package algorithm.sort
  */
 class QuickSort<T> : Sort<T>() {
     override val complexity: String = "nlogn"
+    private lateinit var mCompare: (T, T) -> Boolean
 
     override fun sort(arr: Array<T>, compare: (T, T) -> Boolean): Array<T> {
-        partition(arr, 0, arr.size-1, compare)
+        mCompare = compare
+        partition(arr, 0, arr.size - 1)
         show(arr)
         return arr
     }
 
-    private fun partition(arr: Array<T>, left: Int, right: Int, compare: (T, T) -> Boolean) {
+    private fun partition(arr: Array<T>, left: Int, right: Int) {
         var leftIndex = left
         var rightIndex = right
-        val pivotIndex = (left + right) / 2
-        val pivot = arr[pivotIndex]
+        val pivot = arr[(left + right) shr 1]
 
         while(leftIndex < rightIndex) {
-            while (compare(pivot, arr[leftIndex])) leftIndex++
-            while(compare(arr[rightIndex], pivot)) rightIndex--
+            while(mCompare(pivot, arr[leftIndex])) leftIndex++
+            while(mCompare(arr[rightIndex], pivot)) rightIndex--
 
-            if(leftIndex < rightIndex) {
+            if(leftIndex <= rightIndex) {
                 var temp = arr[leftIndex]
                 arr[leftIndex] = arr[rightIndex]
                 arr[rightIndex] = temp
+                leftIndex++
+                rightIndex--
             }
-
         }
 
-        if(left < leftIndex) partition(arr, left, leftIndex - 1, compare)
-        if(leftIndex < right) partition(arr, leftIndex + 1, right, compare)
+        if(left < rightIndex) partition(arr, left, rightIndex)
+        if(leftIndex < right) partition(arr, leftIndex, right)
     }
 }
