@@ -11,15 +11,20 @@ fun main(args: Array<String>) {
 //    var arr = arrayOf(5,39,2,44,33)
 //    var arr = arrayOf(30000,1,3,10,3,5)
 
+    val compare: (Int, Int) -> Boolean = {
+        a, b -> a>b
+    }
+
     print("Initial array \t\t-  [" )
     for(i in arr) {
         print("$i, ")
     }
     print("]\n\n")
 
-    BubbleSort<Int>().sort(arr.clone(), {a, b -> a > b})
-    SelectionSort<Int>().sort(arr.clone(), { a, b -> a > b})
-    InsertionSort<Int>().sort(arr.clone(), { a, b -> a > b})
-    MergeSort<Int>().sort(arr.clone(), { a, b -> a > b})
-    QuickSort<Int>().sort(arr.clone(), { a, b -> a > b})
+    BubbleSort<Int>().sort(arr.clone(), compare)
+    SelectionSort<Int>().sort(arr.clone(), compare)
+    InsertionSort<Int>().sort(arr.clone(), compare)
+    MergeSort<Int>().sort(arr.clone(), compare)
+    HeapSort<Int>().sort(arr.clone(), compare)
+    QuickSort<Int>().sort(arr.clone(), compare)
 }
